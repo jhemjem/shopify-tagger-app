@@ -33,7 +33,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $appends = [
-        'role', 'full_name',
+        'role', 'name',
     ];
 
     /**
@@ -76,10 +76,11 @@ class User extends Authenticatable
         $this->notify(new ResetPasswordNotification($data));
     }
 
-    public function getFullnameAttribute(): string
+    public function getNameAttribute(): string
     {
-        return "{$this->first_name} {$this->last_name}";
+        return trim("{$this->first_name} {$this->last_name}");
     }
+
     
     public function getRoleAttribute()
     {
