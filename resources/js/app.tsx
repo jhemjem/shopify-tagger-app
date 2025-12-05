@@ -1,3 +1,4 @@
+import '@shopify/polaris/build/esm/styles.css';
 import '../css/app.css';
 
 import { createInertiaApp } from '@inertiajs/react';
